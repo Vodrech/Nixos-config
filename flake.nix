@@ -11,15 +11,15 @@
   };
 
  outputs = { nixpkgs, home-manager, ... }: {
-  nixosConfigurations.vodrech = nixpkgs.lib.nixosSystem {
+  nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
     system="x86_64-linux";
     modules = [
-      ./hosts/vodrech/configuration.nix
+      ./hosts/vodrech/configurations.nix
       home-manager.nixosModules.home-manager {
         home-manager = {
           useGlobalPkgs = true;
 	  useUserPackages = true;
-	  users.vodrech = import ./home.nix;
+	  users.vodrech = import ./hosts/vodrech/home.nix;
           backupFileExtension = "backup";
          };
        }

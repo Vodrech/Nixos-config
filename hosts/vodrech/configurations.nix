@@ -15,7 +15,6 @@
 
   hardware.opengl = {
     enable = true;
-    driSupport = true;
     driSupport32Bit = true;
   };
 
@@ -57,9 +56,6 @@
   };
 
   hardware.graphics.enable = true;
-	
-  #NVIDIA SETTING
-  hardware.nvidia.modesetting.enable = true;
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";

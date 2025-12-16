@@ -2,6 +2,23 @@
 { config, pkgs, ... }:
 
 {
+
+# NVIDIA
+  
+  services.xserver.videoDrivers = ["nvidia"];
+  
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+  };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

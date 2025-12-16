@@ -49,14 +49,22 @@
   security.polkit.enable = true;
   services.dbus.enable = true;
 
-  services.greetd.enable = true;
-  services.greetd.settings = {
-      command = "Hyprland";
-      user = "Vodrech";
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session.command = "hyprland";
+      default_session.user = "vodrech";
+      default_session.environment = {
+	WAYLAND_DISPLAY = "wayland-0";
+	XDG_RUNTIME_DIR = "/run/user/1000";
+      };
+      greeter.command = "bmenu-run";
+      greeter.user = "vodrech";
+    };
   };
 
   hardware.graphics.enable = true;
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -66,6 +74,7 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
+    kitty
     firefox
     git
     wget

@@ -11,7 +11,7 @@
   };
 
  outputs = { nixpkgs, home-manager, ... }: {
-  nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  nixosConfigurations.vodrech = nixpkgs.lib.nixosSystem {
     system="x86_64-linux";
     modules = [
       ./hosts/vodrech/configurations.nix

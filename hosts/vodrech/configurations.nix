@@ -1,7 +1,12 @@
 # Base Configuration file for user:  Vodrech
 { config, pkgs, ... }:
-
 {
+
+# IMPORTS
+imports = [
+  ./hardware-configurations.nix # DO NOT REMOVE
+  # ../../modules/base.nix
+];
 
 # NVIDIA
   
@@ -72,21 +77,25 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    neovim
+    vim # Based editor
+    neovim # Another Based editor
+    wezterm # Terminal
+    git # Version Control
+    firefox # Web Browser
+    wofi # App Launch Manager
+    dunst # Notification Manager
     kitty
-    firefox
-    git
     wget
     waybar
     rofi
-    dunst
-    alacritty
     grim
     slurp
     swaybg
     xdg-desktop-portal-hyprland
     wl-clipboard
+    pavucontrol
+    discord
+    spotify
   ];
 
 environment.variables.TERMINAL = "alacritty";
@@ -97,13 +106,6 @@ environment.variables.TERMINAL = "alacritty";
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
-
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configurations.nix
-    ];
-
-
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "sv_SE.UTF-8";

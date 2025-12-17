@@ -1,7 +1,28 @@
 # Base Configuration file for user:  Vodrech
 { config, pkgs, ... }:
-
 {
+
+# IMPORTS
+imports = [
+  ./hardware-configurations.nix # DO NOT REMOVE
+  # ../../modules/base.nix
+];
+
+# NVIDIA
+  
+  services.xserver.videoDrivers = ["nvidia"];
+  
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+  };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,17 +54,22 @@
   security.polkit.enable = true;
   services.dbus.enable = true;
 
-  services.greetd.enable = true;
-  services.greetd.settings = {
-      command = "Hyprland";
-      user = "Vodrech";
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session.command = "hyprland";
+      default_session.user = "vodrech";
+      default_session.environment = {
+	WAYLAND_DISPLAY = "wayland-0";
+	XDG_RUNTIME_DIR = "/run/user/1000";
+      };
+      greeter.command = "bmenu-run";
+      greeter.user = "vodrech";
+    };
   };
 
   hardware.graphics.enable = true;
-	
-  #NVIDIA SETTING
-  hardware.nvidia.modesetting.enable = true;
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -51,20 +77,25 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    neovim
-    firefox
-    git
+    vim # Based editor
+    neovim # Another Based editor
+    wezterm # Terminal
+    git # Version Control
+    firefox # Web Browser
+    wofi # App Launch Manager
+    dunst # Notification Manager
+    kitty
     wget
     waybar
     rofi
-    dunst
-    alacritty
     grim
     slurp
     swaybg
     xdg-desktop-portal-hyprland
     wl-clipboard
+    pavucontrol
+    discord
+    spotify
   ];
 
 environment.variables.TERMINAL = "alacritty";
@@ -75,13 +106,6 @@ environment.variables.TERMINAL = "alacritty";
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
-
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
-
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "sv_SE.UTF-8";

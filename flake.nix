@@ -10,9 +10,11 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    dotfiles.url = "github:vodrech/dotfiles?ref=master";
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { self, nixpkgs, home-manager, dotfiles, flake-utils, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -27,7 +29,7 @@
 	    home-manager = {
 	      useGlobalPkgs = true;
 	      useUserPackages = true;
-              users.vodrech = import ./hosts/vodrech/home.nix {inherit pkgs self; };
+              users.vodrech = import ./hosts/vodrech/home.nix {inherit pkgs dotfiles; };
 	      backupFileExtension = "backup";
 	    };
           }

@@ -1,5 +1,24 @@
 {
   "nodes": {
+    "dotfiles": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1766088178,
+        "narHash": "sha256-CbHrbOqk4lICwU6/oKXUjq1xI86ZIxqF38ufqr60PDw=",
+        "owner": "vodrech",
+        "repo": "dotfiles",
+        "rev": "070dfda309fd45fda5de12c29a8665ae5bab1a47",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vodrech",
+        "ref": "master",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -40,6 +59,20 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1766025857,
+        "narHash": "sha256-Lav5jJazCW4mdg1iHcROpuXqmM94BWJvabLFWaJVJp0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "def3da69945bbe338c373fddad5a1bb49cf199ce",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1765472234,
         "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
         "owner": "nixos",
@@ -56,9 +89,10 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {

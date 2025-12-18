@@ -1,26 +1,14 @@
-{ pkgs, self, ... }:
+{pkgs, dotfiles, ... }:
 {
-  # Required Home Manager settings
   home.username = "vodrech";
   home.homeDirectory = "/home/vodrech";
   home.stateVersion = "25.11";
 
-  # Packages to install
-  home.packages = [
-    pkgs.neovim
-    pkgs.alacritty
-    pkgs.git
-  ];
+  #home.packages = with pkgs; [
+  # vim
+  #];
 
-  # Symlinking configurations to .config folder
-  home.file.".config/hypr" = {
-    source = "${self}/dotfiles/hypr";
-    recursive = true;
-  };
-
-  home.file.".config/nvim" = {
-    source = "${self}/dotfiles/nvim";
-    recursive = true;
-  };
+  # Symlink submodule directories to .config
+  home.file.".config/hypr".source = "${dotfiles}/hypr";
+  home.file.".config/nvim".source = "${dotfiles}/nvim";
 }
-

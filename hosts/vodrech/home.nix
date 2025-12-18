@@ -1,13 +1,16 @@
-{config, pkgs, ...}:
+{ pkgs, ... }:
+
 {
-	home.username = "vodrech";
-	home.homeDirectory = "/home/vodrech";
-	home.stateVersion = "25.11";
+  # Required Home Manager settings
+  home.username = "vodrech";
+  home.homeDirectory = "/home/vodrech";
+  home.stateVersion = "25.11";  # required!
 
-
-	# Files placed in the .config folder
-
-	home.file = {
-	  ".config/hypr".source = ../../
-	}
+  # Packages to install
+  home.packages = [
+    pkgs.neovim
+    pkgs.alacritty
+    pkgs.git
+  ];
 }
+

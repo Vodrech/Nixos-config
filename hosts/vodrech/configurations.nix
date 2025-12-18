@@ -1,7 +1,6 @@
 # Base Configuration file for user:  Vodrech
 { config, pkgs, ... }:
 {
-
 # IMPORTS
 imports = [
   ./hardware-configurations.nix # DO NOT REMOVE
@@ -11,7 +10,8 @@ imports = [
 # NVIDIA
   
   services.xserver.videoDrivers = ["nvidia"];
-  
+ 
+
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
@@ -80,6 +80,7 @@ imports = [
     vim # Based editor
     neovim # Another Based editor
     wezterm # Terminal
+    alacritty # REMOVE LATER
     git # Version Control
     firefox # Web Browser
     wofi # App Launch Manager
@@ -94,13 +95,19 @@ imports = [
     xdg-desktop-portal-hyprland
     wl-clipboard
     pavucontrol
+    lutris
+    wineWowPackages.staging
+    winetricks
     discord
     spotify
+    mangohud
   ];
 
+  programs.gamemode = {
+    enable = true;
+  };
+
 environment.variables.TERMINAL = "alacritty";
-
-
 
   xdg.portal = {
     enable = true;

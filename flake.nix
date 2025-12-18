@@ -15,6 +15,7 @@
   outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
     let
       system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations.vodrech = nixpkgs.lib.nixosSystem {
@@ -26,7 +27,7 @@
 	    home-manager = {
 	      useGlobalPkgs = true;
 	      useUserPackages = true;
-              users.vodrech = import ./hosts/vodrech/home.nix;
+              users.vodrech = import ./hosts/vodrech/home.nix {inherit pkgs self; };
 	      backupFileExtension = "backup";
 	    };
           }

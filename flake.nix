@@ -30,7 +30,7 @@
 	      useGlobalPkgs = true;
 	      useUserPackages = true;
               users.vodrech = import ./hosts/vodrech/home.nix {inherit pkgs dotfiles; };
-	      backupFileExtension = "backup";
+	      # backupFileExtension = "backup";
 	    };
           }
         ];

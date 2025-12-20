@@ -83,6 +83,7 @@ imports = [
     neovim # Another Based editor
     wezterm # Terminal
     alacritty # REMOVE LATER
+    inotify-tools
     git # Version Control
     firefox # Web Browser
     wofi # App Launch Manager

@@ -30,6 +30,8 @@ imports = [
   networking.networkmanager.enable = true;
   networking.hostName = "vodrech"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+
   
   # Experimental
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -81,6 +83,7 @@ imports = [
     neovim # Another Based editor
     wezterm # Terminal
     alacritty # REMOVE LATER
+    inotify-tools
     git # Version Control
     firefox # Web Browser
     wofi # App Launch Manager
@@ -101,6 +104,15 @@ imports = [
     discord
     spotify
     mangohud
+    libnotify
+    nerd-fonts.fira-code
+  ];
+
+
+  # Font
+  fonts.fonts = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.roboto-mono
   ];
 
   programs.gamemode = {

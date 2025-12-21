@@ -88,6 +88,7 @@ imports = [
     firefox # Web Browser
     wofi # App Launch Manager
     dunst # Notification Manager
+    nitch
     kitty
     wget
     waybar
@@ -141,7 +142,7 @@ environment.variables.TERMINAL = "alacritty";
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "colemak_DH";
+    variant = "colemak";
   };
 
 

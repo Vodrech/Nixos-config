@@ -11,10 +11,12 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    swww.url = "github:LGFae/swww";
+
     dotfiles.url = "github:vodrech/dotfiles?ref=master";
   };
 
-  outputs = { self, nixpkgs, home-manager, dotfiles, flake-utils, ... }:
+  outputs = { self, nixpkgs, swww, home-manager, dotfiles, flake-utils, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -31,6 +33,7 @@
 	      useUserPackages = true;
               users.vodrech = import ./hosts/vodrech/home.nix {inherit pkgs dotfiles; };
 	      # backupFileExtension = "backup";
+	      extraSpecialArgs = {swww = swww; };
 	    };
           }
         ];

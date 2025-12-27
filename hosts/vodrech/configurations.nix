@@ -107,7 +107,17 @@ imports = [
     mangohud
     libnotify
     nerd-fonts.fira-code
+    bibata-cursors # Cursor lib
+    playerctl
+    jq
+    python314
+    clamav
   ];
+
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
 
 
   # Font
@@ -141,8 +151,8 @@ environment.variables.TERMINAL = "alacritty";
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
-    variant = "colemak";
+    layout = "us,us,se";
+    variant = ",colemak,";
   };
 
 

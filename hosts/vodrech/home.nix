@@ -8,7 +8,6 @@
     pkgs.swww
   ];
 
-
   # Hyprland
   home.file.".config/hypr" = {
     source = "${dotfiles}/hypr";

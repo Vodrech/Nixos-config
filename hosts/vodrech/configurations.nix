@@ -1,16 +1,13 @@
-# Base Configuration file for user:  Vodrech
 { config, pkgs, ... }:
 {
-# IMPORTS
+
 imports = [
   ./hardware-configurations.nix # DO NOT REMOVE
-  # ../../modules/base.nix
+  ../../modules/lsp.nix
+  ../../modules/builders.nix
 ];
 
-# NVIDIA
-  
   services.xserver.videoDrivers = ["nvidia"];
- 
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -43,9 +40,38 @@ imports = [
   users.users.vodrech = {
     isNormalUser = true;
     description = "Vodrech";
+    uid=1000;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
+
+  networking.firewall = {
+    enable = true;
+    backend = "nftables";
+  };
+
+  users.users.sandboxuser = {
+    isNormalUser = true;
+    uid = 1001; # Identifier
+    description = "Sandbox user";  
+  };
+
+  networking.nftables.enable = true;
+  networking.nftables.ruleset = ''
+    table inet sandbox {
+      chain input {
+        type filter hook forward priority 0;
+	policy drop;
+	iif lo accept;
+
+      }
+      chain output {
+        type filter hook output priority 0;
+	policy accept;
+        meta skuid 1001 drop;
+      }
+    }
+  '';
 
   #Enable Wayland & Hyprland
   programs.hyprland = {
@@ -79,6 +105,7 @@ imports = [
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    nftables
     vim # Based editor
     neovim # Another Based editor
     wezterm # Terminal
@@ -130,7 +157,7 @@ imports = [
     enable = true;
   };
 
-environment.variables.TERMINAL = "alacritty";
+environment.variables.TERMINAL = "wezterm";
 
   xdg.portal = {
     enable = true;

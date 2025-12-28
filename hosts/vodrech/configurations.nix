@@ -3,8 +3,9 @@
 
 imports = [
   ./hardware-configurations.nix # DO NOT REMOVE
-  ../../modules/lsp.nix
-  ../../modules/builders.nix
+  ../../modules/base.nix # DO NOT REMOVE
+  ../../modules/lsp.nix # LSP
+  ../../modules/builders.nix # Programming builders
 ];
 
   services.xserver.videoDrivers = ["nvidia"];
@@ -105,40 +106,12 @@ imports = [
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nftables
-    vim # Based editor
-    neovim # Another Based editor
-    wezterm # Terminal
-    alacritty # REMOVE LATER
-    inotify-tools
-    git # Version Control
-    firefox # Web Browser
-    wofi # App Launch Manager
-    dunst # Notification Manager
-    nitch
-    kitty
-    wget
-    waybar
-    rofi
-    grim
-    slurp
-    swaybg
-    xdg-desktop-portal-hyprland
-    wl-clipboard
-    pavucontrol
     lutris
     wineWowPackages.staging
     winetricks
     discord
     spotify
     mangohud
-    libnotify
-    nerd-fonts.fira-code
-    bibata-cursors # Cursor lib
-    playerctl
-    jq
-    python314
-    clamav
   ];
 
   services.clamav = {

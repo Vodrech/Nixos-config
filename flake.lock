@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1766793822,
-        "narHash": "sha256-M8A8v2qSTXJHsVTphmw3JhM9L0nvvnQNg3vMMk+Ni30=",
+        "lastModified": 1766944154,
+        "narHash": "sha256-6YlaEvXvxn7+94r5WgKrvFejefzrZqGRxAv3FIE59r8=",
         "owner": "vodrech",
         "repo": "dotfiles",
-        "rev": "823a6844e1ce4f6084c56ae72205bf4a758782a2",
+        "rev": "9f520f043c8b617e4f3fcaaa2378620effd07165",
         "type": "github"
       },
       "original": {
@@ -60,11 +60,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766881808,
-        "narHash": "sha256-JR7A2xS3EBPWFeONzhqez5vp7nKEsp7eLj2Ks210Srk=",
+        "lastModified": 1766939453,
+        "narHash": "sha256-wYkmpaD4zDLydwsqsBIip90X/eLWiYwncoo3qxm3gHE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d2e0458d6531885600b346e161c38790dc356fa8",
+        "rev": "3613abcbd7cf373a59b7f582260ca6b7bd703eaf",
         "type": "github"
       },
       "original": {

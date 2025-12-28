@@ -25,4 +25,9 @@
     source = "${dotfiles}/nvim";
     force = true;
   };
+
+  # BASHRC | NOT WROKING
+  # home.file.".bashrc" = {
+  #   source = "${dotfiles/.bashrc}";
+  # };
 }

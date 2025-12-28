@@ -23,6 +23,7 @@
     libnotify # Notification
     nftables # IPTables replacement
     inotify-tools # Notification tools
+    ripgrep # Grep tool
 
     # SHOULD BE REMOVED?
     pavucontrol # Sound controller | find better solution

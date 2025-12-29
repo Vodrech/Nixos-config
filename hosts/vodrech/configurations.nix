@@ -106,6 +106,7 @@ imports = [
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    ollama # Local LLM's
     lutris
     wineWowPackages.staging
     winetricks

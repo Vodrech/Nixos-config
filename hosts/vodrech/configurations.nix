@@ -107,11 +107,12 @@ imports = [
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     ollama # Local LLM's
-    lutris
+    lutris # Gaming
     wineWowPackages.staging
-    winetricks
+    winetricks # Gaming
     discord
     spotify
+    cava # terminal audio visualizer
     mangohud
   ];
 

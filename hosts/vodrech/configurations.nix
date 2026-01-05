@@ -87,7 +87,7 @@ imports = [
   services.greetd = {
     enable = true;
     settings = {
-      default_session.command = "hyprland";
+      default_session.command = "start-hyprland";
       default_session.user = "vodrech";
       default_session.environment = {
 	WAYLAND_DISPLAY = "wayland-0";
@@ -113,7 +113,8 @@ imports = [
     discord
     spotify
     cava # terminal audio visualizer
-    mangohud
+    mangohud # Gaming stats
+    bolt-launcher # Jagex launcer 3rd party
   ];
 
   services.clamav = {

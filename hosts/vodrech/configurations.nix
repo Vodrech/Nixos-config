@@ -29,8 +29,6 @@ imports = [
   networking.hostName = "vodrech"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-
-  
   # Experimental
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -115,13 +113,8 @@ imports = [
     cava # terminal audio visualizer
     mangohud # Gaming stats
     bolt-launcher # Jagex launcer 3rd party
+		p7zip
   ];
-
-  services.clamav = {
-    daemon.enable = true;
-    updater.enable = true;
-  };
-
 
   # Font
   fonts.fonts = with pkgs; [
@@ -133,7 +126,6 @@ imports = [
     enable = true;
   };
 
-environment.variables.TERMINAL = "wezterm";
 
   xdg.portal = {
     enable = true;
@@ -151,13 +143,6 @@ environment.variables.TERMINAL = "wezterm";
     LC_TELEPHONE = "sv_SE.UTF-8";
     LC_TIME = "sv_SE.UTF-8";
   };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us,us,se";
-    variant = ",colemak,";
-  };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

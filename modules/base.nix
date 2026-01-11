@@ -31,4 +31,17 @@
     grim # UNKNOWN | good with slurp
     slurp # UNKNOWN | good with grim
   ];
+
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
+
+	environment.variables.TERMINAL = "wezterm";
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us,us,se";
+    variant = ",colemak,";
+  };
 }

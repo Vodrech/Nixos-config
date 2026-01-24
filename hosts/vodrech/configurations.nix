@@ -6,6 +6,7 @@ imports = [
   ../../modules/base.nix # DO NOT REMOVE
   ../../modules/lsp.nix # LSP
   ../../modules/builders.nix # Programming builders
+  ../../modules/bevy.nix # Bevy Temporary
 ];
 
   services.xserver.videoDrivers = ["nvidia"];
@@ -114,6 +115,7 @@ imports = [
     mangohud # Gaming stats
     bolt-launcher # Jagex launcer 3rd party
 		p7zip
+		freecad
   ];
 
   # Font

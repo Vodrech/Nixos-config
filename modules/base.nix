@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     vim # Based editor
     neovim # Another Based editor
+		opencode # AI Code Agent
     wezterm # Terminal
     kitty # Terminal
     git # Version Control

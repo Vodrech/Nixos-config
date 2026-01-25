@@ -14,9 +14,11 @@
     swww.url = "github:LGFae/swww";
 
     dotfiles.url = "github:vodrech/dotfiles?ref=master";
+
+    rust-overlay.url = "github:oxalica/rust-overlay"; 
   };
 
-  outputs = { self, nixpkgs, swww, home-manager, dotfiles, flake-utils, ... }:
+  outputs = { self, nixpkgs, swww, home-manager, dotfiles, flake-utils, rust-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };

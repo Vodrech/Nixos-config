@@ -6,7 +6,6 @@ imports = [
   ../../modules/base.nix # DO NOT REMOVE
   ../../modules/lsp.nix # LSP
   ../../modules/builders.nix # Programming builders
-  ../../modules/bevy.nix # Bevy Temporary
 ];
 
   services.xserver.videoDrivers = ["nvidia"];

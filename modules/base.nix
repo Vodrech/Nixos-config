@@ -25,6 +25,7 @@
     nftables # IPTables replacement
     inotify-tools # Notification tools
     ripgrep # Grep tool
+		ffmpeg # MP4 Converter
 
     # SHOULD BE REMOVED?
     pavucontrol # Sound controller | find better solution

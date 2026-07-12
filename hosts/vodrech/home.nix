@@ -22,6 +22,18 @@
     force = true;
   };
 
+  # Mutagen
+  home.file.".config/matugen" = {
+    source = "${dotfiles}/matugen";
+    force = true;
+  };
+
+  # Scripts
+  home.file.".config/scripts" = {
+    source = "${dotfiles}/scripts";
+    force = true;
+  };
+
   # BASHRC | NOT WROKING
   # home.file.".bashrc" = {
   #   source = "${dotfiles/.bashrc}";

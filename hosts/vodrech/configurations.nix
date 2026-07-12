@@ -100,6 +100,7 @@ imports = [
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+		YPRLAND_CONFIG = "/home/vodrech/.config/hypr/hyprland.lua";
   };
 
   # $ nix search wget

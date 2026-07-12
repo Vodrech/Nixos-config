@@ -85,14 +85,14 @@ imports = [
   services.greetd = {
     enable = true;
     settings = {
-      default_session.command = "start-hyprland";
-      default_session.user = "vodrech";
-      default_session.environment = {
-	WAYLAND_DISPLAY = "wayland-0";
-	XDG_RUNTIME_DIR = "/run/user/1000";
-      };
-      greeter.command = "bmenu-run";
-      greeter.user = "vodrech";
+		  default_session = {
+			  command = "start-hyprland -c /home/vodrech/.config/hypr/hyprland.lua";
+				user = "vodrech";
+			};
+			greeter = {
+			  command = "bmenu-run";
+				user = "vodrech";
+			};
     };
   };
 
@@ -100,7 +100,7 @@ imports = [
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
-		YPRLAND_CONFIG = "/home/vodrech/.config/hypr/hyprland.lua";
+		HYPRLAND_CONFIG = "/home/vodrech/.config/hypr/hyprland.lua";
   };
 
   # $ nix search wget

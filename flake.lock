@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1783817616,
-        "narHash": "sha256-FoFFeI7JBzXcrUV4Hl8ihoUn5RHWRtPnXlxLLxJ7RRE=",
+        "lastModified": 1783829315,
+        "narHash": "sha256-g1GLgeI5ilvrF/AKbPTyR81cKSTotPKJtr4qW1XOFww=",
         "owner": "vodrech",
         "repo": "dotfiles",
-        "rev": "9aec685e1ebfd535fc3f12c42db7283e18d9eb25",
+        "rev": "f8c6765bdc7681a5248a2023c9354b6a2fa39911",
         "type": "github"
       },
       "original": {

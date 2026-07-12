@@ -2,7 +2,7 @@
 {
   home.username = "vodrech";
   home.homeDirectory = "/home/vodrech";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.11";
 
   # Hyprland
   home.file.".config/hypr" = {

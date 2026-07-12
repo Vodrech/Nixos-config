@@ -4,10 +4,6 @@
   home.homeDirectory = "/home/vodrech";
   home.stateVersion = "25.11";
 
-  home.packages = [
-    pkgs.swww
-  ];
-
   # Hyprland
   home.file.".config/hypr" = {
     source = "${dotfiles}/hypr";

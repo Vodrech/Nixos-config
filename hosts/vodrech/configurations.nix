@@ -114,7 +114,6 @@ imports = [
     mangohud # Gaming stats
     bolt-launcher # Jagex launcer 3rd party
 		p7zip
-		freecad
   ];
 
   # Font

@@ -11,7 +11,7 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    dotfiles.url = "github:vodrech/dotfiles?ref=master";
+    dotfiles.url = "github:vodrech/dotfiles?ref=release/v1";
 
     rust-overlay.url = "github:oxalica/rust-overlay"; 
   };

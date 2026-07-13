@@ -16,6 +16,7 @@
     waybar # Wayland - Statusbar
     nerd-fonts.fira-code # NerdFont
 		matugen # Color Generation Tool
+		quickshell # Overlay Interface toolkit
 
 		# Necessary
 		opencode # AI Code Agent

@@ -7,6 +7,7 @@ imports = [
   ../../modules/lsp.nix # LSP
   ../../modules/builders.nix # Programming builders
 	../../modules/misc.nix # Miscalanius
+	../../modules/alias.nix # Aliases
 ];
 
   services.xserver.videoDrivers = ["nvidia"];

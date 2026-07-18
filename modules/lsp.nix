@@ -6,5 +6,6 @@
     typescript-language-server # .ts / .js
     rust-analyzer # .rs
     bash-language-server # .sh
+		kdePackages.qtdeclarative # QML / Quickshell
   ];
 }

@@ -28,6 +28,12 @@
     force = true;
   };
 
+  # Quickshell
+  home.file.".config/quickshell" = {
+    source = "${dotfiles}/quickshell";
+    force = true;
+  };
+
   # Scripts
   home.file.".config/scripts" = {
     source = "${dotfiles}/scripts";

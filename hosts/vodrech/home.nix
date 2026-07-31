@@ -34,6 +34,12 @@
     force = true;
   };
 
+  # walker
+  home.file.".config/walker" = {
+    source = "${dotfiles}/walker";
+    force = true;
+  };
+
   # Scripts
   home.file.".config/scripts" = {
     source = "${dotfiles}/scripts";

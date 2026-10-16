@@ -5,7 +5,9 @@
 
 	  # Mandatory
     vim # Based editor
+		herdr # Multiplexer agents
     neovim # Another Based editor
+		hyprcursor # Cursor Theme
 		awww # Wallpaper Engine
     walker # App Launch Manager
 		elephant # Data Provider for Walker

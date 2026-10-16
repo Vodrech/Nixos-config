@@ -40,6 +40,12 @@
     force = true;
   };
 
+  # Wezterm
+  home.file.".config/wezterm" = {
+    source = "${dotfiles}/wezterm";
+    force = true;
+  };
+
   # Scripts
   home.file.".config/scripts" = {
     source = "${dotfiles}/scripts";

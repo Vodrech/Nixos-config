@@ -8,6 +8,7 @@ imports = [
   ../../modules/builders.nix # Programming builders
 	../../modules/misc.nix # Miscalanius
 	../../modules/alias.nix # Aliases
+	../../modules/gaming.nix # Gaming
 ];
 
   services.xserver.videoDrivers = ["nvidia"];
@@ -18,9 +19,9 @@ imports = [
     nvidiaSettings = true;
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Bootloader.
@@ -98,7 +99,6 @@ imports = [
     };
   };
 
-  hardware.graphics.enable = true;
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -107,15 +107,9 @@ imports = [
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    ollama # Local LLM's
-    lutris # Gaming
-    wineWowPackages.staging
-    winetricks # Gaming
-    discord
     spotify
     cava # terminal audio visualizer
     mangohud # Gaming stats
-    bolt-launcher # Jagex launcer 3rd party
 		p7zip
   ];
 

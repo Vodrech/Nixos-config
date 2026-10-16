@@ -45,9 +45,6 @@
     ripgrep # Grep tool
 		ffmpeg # MP4 Converter
 
-		# Unknown
-    xdg-desktop-portal-hyprland # Backend Hyprland
-
     # SHOULD BE REMOVED?
     pavucontrol # Sound controller | find better solution
     swaybg # UNKNOWN if used

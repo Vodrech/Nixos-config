@@ -90,7 +90,7 @@ imports = [
     enable = true;
     settings = {
 		  default_session = {
-			  command = "start-hyprland -c /home/vodrech/.config/hypr/hyprland.lua";
+			  command = "uwsm start hyprland-uwsm.desktop";
 				user = "vodrech";
 			};
 			greeter = {

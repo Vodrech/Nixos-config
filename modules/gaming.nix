@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     lutris # Game Launcher
-    wineWowPackages.staging
+		wineWow64Packages.staging
     winetricks # Gaming
     bolt-launcher # Jagex launcer 3rd party
 		vesktop # Discord

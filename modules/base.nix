@@ -18,16 +18,8 @@
     waybar # Wayland - Statusbar
     nerd-fonts.fira-code # NerdFont
 		matugen # Color Generation Tool
-		# quickshell # Overlay Interface toolkit
-		(pkgs.quickshell.overrideAttrs (old: {
-      version = "unstable";
-      src = pkgs.fetchFromGitHub {
-        owner = "quickshell-mirror";
-        repo = "quickshell";
-        rev = "10b439fc6e3fd65c15fe1c486271b31da05ed023";
-        hash = "sha256-6AM0doj8hSNav9qkX4dOHOp1LSjegdQ+VmzDz9MnWAs=";
-      };
-    }))
+		quickshell # Overlay Interface toolkit
+		claude-code # Cluade
 
 		# Necessary
 		opencode # AI Code Agent

@@ -20,6 +20,7 @@
 		matugen # Color Generation Tool
 		quickshell # Overlay Interface toolkit
 		claude-code # Cluade
+		firejail # Networking
 
 		# Necessary
 		opencode # AI Code Agent
